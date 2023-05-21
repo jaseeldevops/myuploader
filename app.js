@@ -30,4 +30,4 @@ app.get("*", function (req, res) {
   res.sendFile(path.resolve(__dirname, "public/index", "index.html"));
 });
 
-app.listen(8000);
+app.listen(80);
