@@ -17,7 +17,7 @@ app.get("/buildapp", (req, res) => {
 });
 
 app.get("/", function (req, res) {
-  res.send("Welocme to Muhammeds World!");
+  res.send("Welocme to Muhammeds World E1!");
 });
 
 app.listen(8000);
