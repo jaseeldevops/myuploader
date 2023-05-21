@@ -2,13 +2,12 @@ var express = require("express");
 var app = express();
 const { exec } = require("child_process");
 
-const path = require('path');
+const path = require("path");
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.resolve(__dirname, 'public')));
 
-// Define a route for your HTML page
-app.get('/mypage', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'mypage.html'));
+app.get("/mypage", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "mypage.html"));
 });
 
 app.get("/buildapp", (req, res) => {
@@ -26,8 +25,9 @@ app.get("/buildapp", (req, res) => {
   });
 });
 
-app.get("/", function (req, res) {
-  res.send("Welocme to Muhammeds World E5!");
+app.use(express.static(path.resolve(__dirname, 'public/index')));
+app.get("*", function (req, res) {
+  res.sendFile(path.resolve(__dirname, "public/index", "index.html"));
 });
 
-app.listen(8000);
+app.listen(80);
