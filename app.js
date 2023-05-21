@@ -2,6 +2,15 @@ var express = require("express");
 var app = express();
 const { exec } = require("child_process");
 
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Define a route for your HTML page
+app.get('/mypage', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'mypage.html'));
+});
+
 app.get("/buildapp", (req, res) => {
   res.send(`Succes`);
   exec(`sh test.sh`, (error, stdout, stderr) => {
