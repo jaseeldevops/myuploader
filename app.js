@@ -3,21 +3,22 @@ var app = express();
 const { exec } = require("child_process");
 
 app.get("/buildapp", (req, res) => {
+  res.send(`Succes`);
   exec(`sh test.sh`, (error, stdout, stderr) => {
     if (error) {
-      res.send(`Error executing the script: ${error.message}`);
+      console.error(`Error executing the script: ${error.message}`);
       return;
     }
     if (stderr) {
-      res.send(`Script execution returned an error: ${stderr}`);
+      console.error(`Script execution returned an error: ${stderr}`);
       return;
     }
-    res.send(`Script output: ${stdout}`);
+    console.log(`Script output: ${stdout}`);
   });
 });
 
 app.get("/", function (req, res) {
-  res.send("Welocme to Muhammeds World E3!");
+  res.send("Welocme to Muhammeds World E5!");
 });
 
 app.listen(8000);
