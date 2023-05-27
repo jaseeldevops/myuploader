@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family:  sans-serif;
+  font-family: sans-serif;
   color: rgb(40, 40, 40);
   background-color: rgb(255, 255, 255);
 }
@@ -66,4 +66,18 @@
     font-size: 16px;
     font-weight: 500;
   }
+}
+/* ///////////////////////////////////////////// */
+/* ///////////////////////////////////////////// */
+/* ///////////////////////////////////////////// */
+/* ///////////////////////////////////////////// */
+.indB {
+  position: fixed;
+  top: 100vh;
+  left: 0;
+  right: 0;
+  padding: 10%;
+  box-sizing: border-box;
+  background-color: rgb(40, 40, 40);
+  color: white;
 }
