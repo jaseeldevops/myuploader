@@ -3,5 +3,5 @@ function onClickInsta() {
 }
 
 function onClickWhatsapp() {
-    window.location = 'https://api.whatsapp.com/send?phone=919544013463&text=Hi, Iam "'
+    window.location = 'https://api.whatsapp.com/send?phone=919544013463&text=Hi, Iam '
 }
