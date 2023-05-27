@@ -21,4 +21,4 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - run: curl 'http://13.200.64.52:8000/buildapp'
+    - run: curl 'http://13.200.64.52/buildapp'
