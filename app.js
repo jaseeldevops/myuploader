@@ -25,6 +25,11 @@ app.get("/buildapp", (req, res) => {
   });
 });
 
+app.use(express.static(path.resolve(__dirname, 'public/mridhul')));
+app.get("/mridhul", function (req, res) {
+  res.sendFile(path.resolve(__dirname, "public/mridhul", "index.html"));
+});
+
 app.use(express.static(path.resolve(__dirname, 'public/index')));
 app.get("*", function (req, res) {
   res.sendFile(path.resolve(__dirname, "public/index", "index.html"));
