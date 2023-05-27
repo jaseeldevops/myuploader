@@ -4,12 +4,6 @@ const { exec } = require("child_process");
 
 const path = require("path");
 
-app.use(express.static(path.resolve(__dirname, 'public')));
-
-app.get("/mypage", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "mypage.html"));
-});
-
 app.get("/buildapp", (req, res) => {
   res.send(`Succes`);
   exec(`sh test.sh`, (error, stdout, stderr) => {
@@ -25,14 +19,12 @@ app.get("/buildapp", (req, res) => {
   });
 });
 
-app.use(express.static(path.resolve(__dirname, 'public/mridhul')));
-app.get("/mridhul", function (req, res) {
-  res.sendFile(path.resolve(__dirname, "public/mridhul", "index.html"));
-});
-
 app.use(express.static(path.resolve(__dirname, 'public/index')));
+app.get("/mridhul", function (req, res) {
+  res.sendFile(path.resolve(__dirname, "public/index", "mridhul.html"));
+});
 app.get("*", function (req, res) {
-  res.sendFile(path.resolve(__dirname, "public/index", "index.html"));
+  res.sendFile(path.resolve(__dirname, "public/index", "jaseel.html"));
 });
 
 app.listen(80);
